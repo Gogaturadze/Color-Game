@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #394255;
+}
+
+.main-div {
+  width: 550px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(200px);
+  box-shadow: #ffffff 0px 5px 10px -5px inset;
+  border-radius: 5px;
+}
+
+.container {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 45px;
+}
+.header-txt {
+  margin: 0 auto 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    color: rgb(244, 241, 241);
+  }
+  span:first-child {
+    color: #44ce7b;
+  }
+  span:nth-child(2) {
+    color: #12bcfe;
+  }
+  span:nth-child(3) {
+    color: #fad648;
+  }
+  span:nth-child(4) {
+    color: #f6a000;
+  }
+  span:nth-child(5) {
+    color: rgb(195, 55, 55);
+  }
+}
+#score {
+  color: aliceblue;
+}
+#game-level {
+  color: #f9d923;
+}
+
+#main-color {
+  width: 250px;
+  height: 250px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 2px;
+}
+.guess-div {
+  width: 350px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.guess-div > button {
+  border-radius: 2px !important;
+  transition: all 0.2s !important;
+}
+.guess-div > button:hover {
+  border: 2px solid whitesmoke !important;
+}
+
+/* button */
+.codepen-button {
+  display: block;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  margin: 0 auto;
+  position: relative;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 3px;
+  isolation: isolate;
+}
+
+.codepen-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    #4fcf70,
+    #fad648,
+    #a767e5,
+    #12bcfe,
+    #44ce7b
+  );
+  background-size: 25% 100%;
+  animation: an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop
+    0.75s linear infinite;
+  animation-play-state: paused;
+  translate: -5% 0%;
+  transition: translate 0.25s ease-out;
+}
+
+.codepen-button:hover::before {
+  animation-play-state: running;
+  transition-duration: 0.75s;
+  translate: 0% 0%;
+}
+
+@keyframes an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop {
+  to {
+    transform: translateX(-25%);
+  }
+}
+
+.codepen-button span {
+  position: relative;
+  display: block;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  backdrop-filter: blur(100px);
+  border-radius: 3px;
+  height: 100%;
+}

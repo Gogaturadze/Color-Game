@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Game</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="main-div">
+      <div class="container header-txt">
+        <h1>
+          <span>C</span>
+          <span>O</span>
+          <span>L</span>
+          <span>O</span>
+          <span>R</span>
+          <span>guessing game</span>
+        </h1>
+        <div style="display: flex; gap: 15px">
+          <h2 id="game-level">Begginer</h2>
+          <h2 id="score"></h2>
+        </div>
+      </div>
+      <div class="container">
+        <div id="main-color"></div>
+        <div id="guess-color" class="guess-div"></div>
+        <button id="next-color" onclick="nextColor()" class="codepen-button">
+          <span>Next Color</span>
+        </button>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
