@@ -1,4 +1,3 @@
-//
 function getRandomColor() {
   let letters = "0123456789ABCDEF";
   let color = "#";
@@ -7,35 +6,35 @@ function getRandomColor() {
   }
   return color;
 }
-//
+
 let levelId = document.getElementById("game-level");
-//
+
 let score = 0;
 let scoreId = document.getElementById("score");
-
 scoreId.innerText = "Score: " + score;
 
 function refreshScore() {
   scoreId.innerText = "Score: " + score;
 }
-//
+
 let colors = [];
 let arrayColorLenght = 5;
 for (let i = 0; i < arrayColorLenght; i++) {
   colors.push(getRandomColor());
 }
+
 function increaseLenght(num) {
   for (let i = 0; i < num; i++) {
     colors[i] = getRandomColor();
   }
-  mainColor.style.backgroundColor = colors[Math.floor(Math.random() * 6)];
+  mainColor.style.backgroundColor =
+    colors[Math.floor(Math.random() * arrayColorLenght)];
   addGuessColors(colors);
 }
 
-//
 let mainColor = document.getElementById("main-color");
-mainColor.style.backgroundColor = colors[Math.floor(Math.random() * 5) + 1];
-//
+mainColor.style.backgroundColor =
+  colors[Math.floor(Math.random() * arrayColorLenght)];
 
 function addGuessColors(colors) {
   let guessColorBox = document.getElementById("guess-color");
@@ -51,9 +50,8 @@ function addGuessColors(colors) {
     addColorBtn.style.backgroundColor = arrayColor[i];
     addColorBtn.addEventListener("click", function () {
       if (mainColor.style.backgroundColor != this.style.backgroundColor) {
-        alert("ვერ გამოიცანით");
+        alert("Incorrect guess!");
       } else {
-        alert("გილოცავთ ! თქვენ გამოიცანით");
         let allButtons = guessColorBox.querySelectorAll("button");
         allButtons.forEach(function (button) {
           button.style.backgroundColor = mainColor.style.backgroundColor;
@@ -77,15 +75,16 @@ function addGuessColors(colors) {
     });
   }
 }
-//
+
 function nextColor() {
-  if (score == 10) {
+  if (score == 10 && levelId.innerHTML === "You Win") {
     location.reload();
   }
   for (let i = 0; i < 5; i++) {
     colors[i] = getRandomColor();
   }
-  mainColor.style.backgroundColor = colors[Math.floor(Math.random() * 6)];
+  mainColor.style.backgroundColor =
+    colors[Math.floor(Math.random() * arrayColorLenght)];
   addGuessColors(colors);
 }
 
